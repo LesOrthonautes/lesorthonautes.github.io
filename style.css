@@ -1,0 +1,98 @@
+body {
+    background-image: url("img/bois3.jpg");
+    background-size: 200%;
+}
+
+.cadre{
+    border-image: url("");
+    border-image: url('img/cadre.png') round;
+    border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+    border-image-width: 30px 48px;
+    width: 75vw;
+    height: 12vh;
+    font-size: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ligne{
+    height: 40vh;
+    display: flex;    
+    align-items: center;
+    justify-content: space-evenly;
+}
+#l3{
+    height: 20vh;
+}
+
+#l3 div{
+    background-color: beige;
+    font-size: 140%;
+    border: solid 2px black;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px;
+} 
+#l3 img {
+    max-height: 15vh;
+}
+img.jeu{
+    border: solid 4px black;
+    border-radius: 6px;
+    max-width: 45vw;
+    max-height: 35vh;
+}
+
+/* Animations */
+.apparition {
+    animation: creation 0.5s ;
+}
+@keyframes creation {
+    from { transform: scale(0, 0);}
+    25% { transform: scale(1.2, 1.2); }
+    50% { transform: scale(0.9, 0.9); }
+    75% { transform: scale(1.05, 1.05); }
+    to { transform: scale(1, 1); }
+}
+
+.secoue:hover{
+    animation: survol 0.25s;
+}
+@keyframes secoue {
+    from { transform: rotate(0deg);}
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+    to { transform: rotate(0deg); }
+}
+
+.zoom{
+    animation: zoom 0.5s;
+}
+@keyframes zoom {
+    from { transform: scale(1); opacity: 100%;}
+    to { transform: scale(10); opacity: 50%;}
+}
+
+.entree{
+    animation: entree 0.5s;
+}
+@keyframes entree {
+    from { translate: 100vw;}
+    to {translate: 0;}
+}
+
+/* Pour Tap'he */
+
+body.taphe {
+    background-image: url("img/fond_taphe.jpg");
+    background-size: 150%;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}

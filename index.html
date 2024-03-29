@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Les Orthonautes</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/logo.png">
+        <script type="text/javascript">
+            setTimeout(() => {
+                document.querySelectorAll('.jeu').forEach(gridItem => {
+                    gridItem.classList.remove('apparition');
+                    gridItem.classList.add('secoue');
+                    gridItem.onclick = () => {
+                        gridItem.classList.remove('secoue');
+                        gridItem.classList.add('zoom');
+                        setTimeout(() => location = "taphe.html",400); 
+                    }
+                })
+                }, 500
+            )
+        </script>
+        
+    </head>
+
+    <body>
+        <div class="choix" >Choisissez votre jeu :</div>
+        <div id="l1" class="ligne">
+            <img class="jeu creation taphe" src="img/taphe.jpg">
+            <img class="jeu creation train" src="img/train.jpg">    
+        </div>
+        <div id="l2" class="ligne">
+            <img class="jeu creation homophone" src="img/homophone.jpg">
+            <img class="jeu creation lile" src="img/lile.jpg">
+        </div>
+        <div id="l3" class="ligne entree">
+            <img src="img/suivi.png"> 
+            <div>
+                Vous aimez voir les choses en grand ?<br> Accédez aux contenus sur pc : <br>https://urlz.fr/pZJY
+            </div>
+        </div>
+    </body>
+</html>
