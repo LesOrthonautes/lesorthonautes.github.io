@@ -1,40 +1,76 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Les Orthonautes</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="img/logo.png">
-        <script type="text/javascript">
-            setTimeout(() => {
-                document.querySelectorAll('.jeu').forEach(gridItem => {
-                    gridItem.classList.remove('apparition');
-                    gridItem.classList.add('secoue');
-                    gridItem.onclick = () => {
-                        gridItem.classList.remove('secoue');
-                        gridItem.classList.add('zoom');
-                        setTimeout(() => location = "taphe.html",400); 
-                    }
-                })
-                }, 500
-            )
-        </script>
-        
+        <script type="text/javascript" src="script.js"></script>        
     </head>
 
     <body>
-        <div class="choix" >Choisissez votre jeu :</div>
-        <div id="l1" class="ligne">
-            <img class="jeu creation taphe" src="img/taphe.jpg">
-            <img class="jeu creation train" src="img/train.jpg">    
-        </div>
-        <div id="l2" class="ligne">
-            <img class="jeu creation homophone" src="img/homophone.jpg">
-            <img class="jeu creation lile" src="img/lile.jpg">
-        </div>
-        <div id="l3" class="ligne entree">
-            <img src="img/suivi.png"> 
-            <div>
-                Vous aimez voir les choses en grand ?<br> Accédez aux contenus sur pc : <br>https://urlz.fr/pZJY
+
+        <!-- GENERAL : écran principal -->
+        <nav class="ecran" id="jeux">
+            <div id="msg_choix" class=" entree" >Choisissez votre jeu :</div>
+            <div class="selection_jeu">
+                <img class="jeu apparition" 
+                     src="img/taphe.jpg"
+                     onclick="go('taphe')"
+                >
+                <img class="jeu apparition" 
+                     src="img/lile.jpg"
+                     onclick="go('lile')"
+                >
+                <img class="jeu apparition" 
+                     src="img/train.jpg"
+                     onclick="go('train')"
+                >
+                <img class="jeu apparition" 
+                     src="img/homophone.jpg"
+                     onclick="go('homophone')"
+                >
             </div>
-        </div>
+            <div id="lien_pc" class="entree">
+                <img src="img/suivi.png"> 
+                <div>
+                    Vous aimez voir les choses en grand ?<br> Accédez aux contenus sur PC : <br>https://urlz.fr/pZJY
+                </div>
+            </div>
+        </nav> 
+       
+        <!-- TAP-HE : écran principal -->
+        <nav class="ecran" id="taphe">
+            <div class="cadre apparition" onclick="go('chrono')">
+                Assistant de jeu
+            </div>
+            <div class="cadre apparition" onclick="go('apprentissage')">
+                Parcours d'apprentissage
+            </div>
+            <div class="cadre apparition" onclick="go('resume')">
+                La leçon en résumé
+            </div>
+            <div class="cadre apparition" onclick="go('video')">
+                La leçon en video
+            </div>
+            <div class="cadre apparition" onclick="go('jeux')">
+                Jeux en ligne
+            </div>
+            <div class="cadre apparition" onclick="go('contact')">
+                Nous contacter
+            </div>        
+            <div class="back" onclick="go('jeux')">↩</div>
+        </nav>
+
+        <!-- TAP-HE : chronomètre -->
+        <nav class="ecran" id="chrono">
+            <div class="cadre chrono apparition">
+                <div>00:00</div>
+                <div>Demarrer</div>
+                <div>Réinitialiser</div>
+            </div>
+            <div class="retour" onclick="goto_taphe">
+
+            </div>
+        </nav>
     </body>
 </html>

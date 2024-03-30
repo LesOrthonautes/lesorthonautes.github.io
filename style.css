@@ -1,8 +1,7 @@
-body {
-    background-image: url("img/bois3.jpg");
-    background-size: 200%;
+/* COMMUN */
+body{
+    margin: 0;
 }
-
 .cadre{
     border-image: url("");
     border-image: url('img/cadre.png') round;
@@ -11,41 +10,39 @@ body {
     width: 75vw;
     height: 12vh;
     font-size: 4vh;
+    text-align: center;
+}
+.back{
+    color: white;
+    background-color: rgb(101, 91, 166);
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    animation: bordure_ocillante 2s infinite ease-in-out;
+    font-size: 5vh;
+    transition: transform 0.4s;
+}
+.cadre, .back{
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-}
-
-.ligne{
-    height: 40vh;
-    display: flex;    
     align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.back:hover{
+    transform: scale(1.1);
+    font-size: 4vh;
+    animation: none;
+}
+.ecran {
+    display: none;
     justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
 }
-#l3{
-    height: 20vh;
-}
-
-#l3 div{
-    background-color: beige;
-    font-size: 140%;
-    border: solid 2px black;
-    border-radius: 2px;
-    text-align: center;
-    padding: 10px;
-} 
-#l3 img {
-    max-height: 15vh;
-}
-img.jeu{
-    border: solid 4px black;
-    border-radius: 6px;
-    max-width: 45vw;
-    max-height: 35vh;
-}
-
-/* Animations */
+/* animations */
 .apparition {
     animation: creation 0.5s ;
 }
@@ -83,16 +80,72 @@ img.jeu{
     from { translate: 100vw;}
     to {translate: 0;}
 }
+@keyframes bordure_ocillante {
+    to { filter: drop-shadow(0px 0px 10px #fff)}
+    50% { filter: drop-shadow(0px 0px 2px #fff)}
+    from { filter: drop-shadow(0px 0px 10px #fff)}
+}
+@keyframes bordure_grossissante {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
 
-/* Pour Tap'he */
+/* ECRAN JEUX */
+#jeux {
+    background-image: url("img/bois3.jpg");
+    background-size: 200%;
+    display: flex;
+}
 
-body.taphe {
-    background-image: url("img/fond_taphe.jpg");
-    background-size: 150%;
-    background-repeat: repeat;
+#jeux #msg_choix {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    font-size: 5vh;
+    color: rgb(255, 241, 193);
+    text-shadow: 5px 5px #2e1f1f;
+}
+
+#jeux .selection_jeu {
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;    
+}
+#jeux img.jeu {
+    border: solid 4px black;
+    border-radius: 6px;
+    max-width: 45vw;
+    max-height: 35vh;
+}
+
+#jeux #lien_pc {
+    height: 15vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
+}
+#jeux #lien_pc div {
+    background-color: beige;
+    font-size: 140%;
+    border: solid 2px black;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px;
+    max-width: 70vw;
+    height: 10vh;
+} 
+#jeux #lien_pc img {
+    max-height: 15vh;
+    max-width: 20vw;
+}
+
+/* TAP-HE : GENERAL */
+#taphe {
+    background-image: url("img/fond_taphe.jpg");
+    background-size: 150%;
+    background-repeat: repeat;
 }
