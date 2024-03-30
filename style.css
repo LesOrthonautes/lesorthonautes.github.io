@@ -1,15 +1,18 @@
 /* COMMUN */
 body{
     margin: 0;
+    height: 100%; 
+    overflow-y: hidden;
 }
 .cadre{
+    font-family: 'Merc';
     border-image: url("");
     border-image: url('img/cadre.png') round;
     border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
     border-image-width: 30px 48px;
     width: 75vw;
     height: 12vh;
-    font-size: 4vh;
+    font-size: 3.5vh;
     text-align: center;
 }
 .back{
@@ -41,6 +44,19 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+}
+/*polices*/
+@font-face {
+    font-family: 'Digital';
+    src: url('../font/SFDigital.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Merc';
+    src: url('../font/merc.otf');
+    font-weight: 400;
+    font-style: normal;
 }
 /* animations */
 .apparition {
@@ -74,7 +90,7 @@ body{
 }
 
 .entree{
-    animation: entree 0.5s;
+    animation: entree 1s ease-out;
 }
 @keyframes entree {
     from { translate: 100vw;}
@@ -92,8 +108,9 @@ body{
 
 /* ECRAN JEUX */
 #jeux {
-    background-image: url("img/bois3.jpg");
-    background-size: 200%;
+    background-repeat: repeat;
+    background-image: url("img/bois4.jpg");
+    background-size: initial;
     display: flex;
 }
 
@@ -123,29 +140,112 @@ body{
 }
 
 #jeux #lien_pc {
-    height: 15vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 #jeux #lien_pc div {
     background-color: beige;
-    font-size: 140%;
+    font-size: calc(min(3.5vw,3vh));
     border: solid 2px black;
     border-radius: 2px;
-    text-align: center;
-    padding: 10px;
+    padding: 0.5em;
     max-width: 70vw;
-    height: 10vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 } 
 #jeux #lien_pc img {
     max-height: 15vh;
     max-width: 20vw;
 }
 
-/* TAP-HE : GENERAL */
-#taphe {
+/* CHRONO */
+.conseil {
+    font-family: initial;
+    font-size: calc(min(4vw,2.5vh));
+}
+.chrono {
+    flex-direction: column;
+    height: auto;    
+    padding: 0.5em;
+}
+#temps-chrono {
+    border: antiquewhite 3px inset;
+    background-color: black;
+    color: antiquewhite;
+    font-family: 'Digital';
+    font-size: 8vh;
+}
+#temps-chrono.en-cours {
+    color: greenyellow;
+}
+#limite-chrono {
+    height: 5vh;
+    width: 60vw;
+}
+#boutons-chrono{
+    font-family: 'Merc';
+    font-size: 3.3vw;
+    display: flex;
+    flex-direction: row;
+}
+#start-chrono {
+    border: antiquewhite 3px outset;
+    border-radius: 20%;
+    background-color: green;
+    width: 30vw;
+    height: 8vh;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#reset-chrono {
+    border: antiquewhite 3px outset;
+    border-radius: 20%;
+    background-color: red;
+    width: 30vw;
+    height: 8vh;    
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+/*VIDEO */
+.video {
+    flex-direction: column;
+    height: auto;    
+    padding: 0.5em;    
+}
+#lien-video {
+    width: 60vw;
+    background-color: black;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+#lien-video img {
+    height: 70%;
+}
+/* FOND D'ECRANS */
+.ecran{
+    background-color: black;
+    background-size: auto 100%;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+.ecran.taphe {
     background-image: url("img/fond_taphe.jpg");
     background-size: 150%;
     background-repeat: repeat;
+}
+.ecran.train {
+    background-image: url("img/fond_train.jpg");
+}
+.ecran.lile {
+    background-image: url("img/fond_lile.jpg");
+}
+.ecran.homophones {
+    background-image: url("img/fond_homophones.jpg");
 }

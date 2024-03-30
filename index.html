@@ -8,26 +8,25 @@
     </head>
 
     <body>
-
         <!-- GENERAL : écran principal -->
         <nav class="ecran" id="jeux">
             <div id="msg_choix" class=" entree" >Choisissez votre jeu :</div>
             <div class="selection_jeu">
                 <img class="jeu apparition" 
                      src="img/taphe.jpg"
-                     onclick="go('taphe')"
+                     onclick="go('taphe','taphe')"
                 >
                 <img class="jeu apparition" 
                      src="img/lile.jpg"
-                     onclick="go('lile')"
+                     title="A VENIR"
                 >
                 <img class="jeu apparition" 
                      src="img/train.jpg"
-                     onclick="go('train')"
+                     onclick="go('train','train')"
                 >
                 <img class="jeu apparition" 
                      src="img/homophone.jpg"
-                     onclick="go('homophone')"
+                     onclick="go('homophones','homophones')"
                 >
             </div>
             <div id="lien_pc" class="entree">
@@ -38,39 +37,85 @@
             </div>
         </nav> 
        
-        <!-- TAP-HE : écran principal -->
-        <nav class="ecran" id="taphe">
-            <div class="cadre apparition" onclick="go('chrono')">
+        <!-- General : chronomètre -->
+        <nav class="ecran" id="chrono">
+            <div class="cadre apparition">
                 Assistant de jeu
             </div>
-            <div class="cadre apparition" onclick="go('apprentissage')">
+            <div class="cadre chrono apparition">
+                <div id="temps-chrono" >00:00</div>
+                <input id="limite-chrono" type="range" min="5" max="30" value="12" onchange="changeChrono()">
+                <div class="conseil">Conseil: de 10 à 15s.<br>Le temps comprend la lecture de la phrase</div>                
+                <div id="boutons-chrono">
+                    <div id="start-chrono" onclick="startChrono()">Demarrer</div>
+                    <div id="reset-chrono" onclick="resetChrono()">Réinitialiser</div>    
+                </div>
+            </div>
+            <div class="cadre apparition video">
+                Règles en vidéo
+                <div id="lien-video" onclick="go('video','taphe')">
+                    <img src="img/video.png">
+                </div>
+            </div>
+            <div class="back" onclick="go('taphe','taphe')">↩</div>
+        </nav>
+
+        <!-- TAP-HE : écran principal -->
+        <nav class="ecran" id="taphe">
+            <div class="cadre apparition" onclick="go('chrono','taphe')">
+                Assistant de jeu
+            </div>
+            <div class="cadre apparition" onclick="go('apprentissage','taphe')">
                 Parcours d'apprentissage
             </div>
-            <div class="cadre apparition" onclick="go('resume')">
+            <div class="cadre apparition" onclick="go('resume','taphe')">
                 La leçon en résumé
             </div>
-            <div class="cadre apparition" onclick="go('video')">
+            <div class="cadre apparition" onclick="go('video','taphe')">
                 La leçon en video
             </div>
-            <div class="cadre apparition" onclick="go('jeux')">
+            <div class="cadre apparition" onclick="go('jeux','taphe')">
                 Jeux en ligne
             </div>
-            <div class="cadre apparition" onclick="go('contact')">
+            <div class="cadre apparition" onclick="go('contact','taphe')">
                 Nous contacter
             </div>        
             <div class="back" onclick="go('jeux')">↩</div>
         </nav>
 
-        <!-- TAP-HE : chronomètre -->
-        <nav class="ecran" id="chrono">
-            <div class="cadre chrono apparition">
-                <div>00:00</div>
-                <div>Demarrer</div>
-                <div>Réinitialiser</div>
+        <!-- TRAIN : écran principal -->
+        <nav class="ecran" id="train">
+            <div class="cadre apparition" onclick="go('chrono','train')">
+                Assistant de jeu
             </div>
-            <div class="retour" onclick="goto_taphe">
-
+            <div class="cadre apparition" onclick="go('apprentissage','train')">
+                Parcours d'apprentissage
             </div>
+            <div class="cadre apparition" onclick="go('jeux','train')">
+                Jeux en ligne
+            </div>
+            <div class="cadre apparition" onclick="go('contact','train')">
+                Nous contacter
+            </div>        
+            <div class="back" onclick="go('jeux')">↩</div>
         </nav>
+
+        <!-- HOMOPHONES : écran principal -->
+        <nav class="ecran" id="homophones">
+            <div class="cadre apparition" onclick="go('chrono','homophones')">
+                Assistant de jeu
+            </div>
+            <div class="cadre apparition" onclick="go('apprentissage','homophones')">
+                Parcours d'apprentissage
+            </div>
+            <div class="cadre apparition" onclick="go('jeux','homophones')">
+                Jeux en ligne
+            </div>
+            <div class="cadre apparition" onclick="go('contact','homophones')">
+                Nous contacter
+            </div>        
+            <div class="back" onclick="go('jeux')">↩</div>
+        </nav>
+
     </body>
 </html>
