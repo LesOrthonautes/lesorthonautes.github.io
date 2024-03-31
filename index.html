@@ -53,11 +53,60 @@
             </div>
             <div class="cadre apparition video">
                 Règles en vidéo
-                <div id="lien-video" onclick="go('video','taphe')">
+                <div id="lien-video" onclick="go('video')">
                     <img src="img/video.png">
                 </div>
             </div>
-            <div class="back" onclick="go('taphe','taphe')">↩</div>
+            <div class="back" onclick="go('taphe')">↩</div>
+        </nav>
+
+        <!-- General : mini-jeux -->
+        <nav class="ecran" id="minijeux">
+            <div class="cadre apparition" onclick="minijeu(1)">
+                <span class="titre-jeu">Quizz Show</span>
+                <img src="img/jeu1.png">
+                <span class="info-jeu">Mode jeu télé</span>
+            </div>
+            <div class="cadre apparition">
+                <span class="titre-jeu" onclick="minijeu(2)">Aviateur</span>
+                <img src="img/jeu2.png">
+                <span class="info-jeu">Dans les nuages...</span>
+            </div>
+            <div class="cadre apparition" onclick="minijeu(3)">
+                <span class="titre-jeu">Labyrinthe</span>
+                <img src="img/jeu3.png">
+                <span class="info-jeu">Mode Pacman</span>
+            </div>
+            <div class="cadre apparition" onclick="minijeu(4)">
+                <span class="titre-jeu">Le parieur</span>
+                <img src="img/jeu4.png">
+                <span class="info-jeu">Attention a ne pas tout perdre</span>
+            </div>
+            <div class="cadre apparition"  onclick="minijeu(5)">
+                <span class="titre-jeu">Tap'Taupes</span>
+                <img src="img/jeu5.png">
+                <span class="info-jeu">Un jeu de rapidité</span>
+            </div>
+            <div class="cadre apparition" onclick="minijeu(6)">
+                <span class="titre-jeu">Mot manquant</span>
+                <img src="img/jeu6.png">
+                <span class="info-jeu">Calme et complexité</span>
+            </div>
+            <div class="back" onclick="go('taphe')">↩</div>
+        </nav>
+
+        <!-- General : contact -->
+        <nav class="ecran" id="contact">
+            <img src="img/logo.png" alt="logo">
+            <div class="cadre apparition">
+                N'hésitez pas à nous contacter ! 
+                Si vous avez des questions,  des dysfonctionnements 
+                à signaler, des pistes d' amélioration à proposer, 
+                ou tout simplement des commentaires positifs à partager, 
+                nous lirons avec intérêt vos messages.<br>
+                <a href="mailto:lesorthonautes@gmail.com">lesorthonautes@gmail.com</a>
+            </div>
+            <div class="back" onclick="go('taphe')">↩</div>
         </nav>
 
         <!-- TAP-HE : écran principal -->
@@ -74,13 +123,13 @@
             <div class="cadre apparition" onclick="go('video','taphe')">
                 La leçon en video
             </div>
-            <div class="cadre apparition" onclick="go('jeux','taphe')">
+            <div class="cadre apparition" onclick="go('minijeux','taphe')">
                 Jeux en ligne
             </div>
             <div class="cadre apparition" onclick="go('contact','taphe')">
                 Nous contacter
             </div>        
-            <div class="back" onclick="go('jeux')">↩</div>
+            <div class="back" onclick="go('jeux','jeux')">↩</div>
         </nav>
 
         <!-- TRAIN : écran principal -->
@@ -91,13 +140,13 @@
             <div class="cadre apparition" onclick="go('apprentissage','train')">
                 Parcours d'apprentissage
             </div>
-            <div class="cadre apparition" onclick="go('jeux','train')">
+            <div class="cadre apparition" onclick="go('minijeux','train')">
                 Jeux en ligne
             </div>
             <div class="cadre apparition" onclick="go('contact','train')">
                 Nous contacter
             </div>        
-            <div class="back" onclick="go('jeux')">↩</div>
+            <div class="back" onclick="go('jeux','jeux')">↩</div>
         </nav>
 
         <!-- HOMOPHONES : écran principal -->
@@ -108,13 +157,13 @@
             <div class="cadre apparition" onclick="go('apprentissage','homophones')">
                 Parcours d'apprentissage
             </div>
-            <div class="cadre apparition" onclick="go('jeux','homophones')">
+            <div class="cadre apparition" onclick="go('minijeux','homophones')">
                 Jeux en ligne
             </div>
             <div class="cadre apparition" onclick="go('contact','homophones')">
                 Nous contacter
             </div>        
-            <div class="back" onclick="go('jeux')">↩</div>
+            <div class="back" onclick="go('jeux','jeux')">↩</div>
         </nav>
 
     </body>

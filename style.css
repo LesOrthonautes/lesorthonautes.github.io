@@ -12,7 +12,7 @@ body{
     border-image-width: 30px 48px;
     width: 75vw;
     height: 12vh;
-    font-size: 3.5vh;
+    font-size: calc(min(5.5vw,3.5vh));
     text-align: center;
 }
 .back{
@@ -137,6 +137,7 @@ body{
     border-radius: 6px;
     max-width: 45vw;
     max-height: 35vh;
+    cursor: pointer;
 }
 
 #jeux #lien_pc {
@@ -177,6 +178,7 @@ body{
     color: antiquewhite;
     font-family: 'Digital';
     font-size: 8vh;
+    padding: 0 4vw;
 }
 #temps-chrono.en-cours {
     color: greenyellow;
@@ -211,7 +213,7 @@ body{
     align-items: center;
     justify-content: center;}
 
-/*VIDEO */
+/* VIDEO */
 .video {
     flex-direction: column;
     height: auto;    
@@ -228,11 +230,46 @@ body{
 #lien-video img {
     height: 70%;
 }
+/* MINIJEUX */
+#minijeux{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#minijeux .cadre {
+    width: 45vw;
+    height: 25vh;
+    flex-direction: column;
+}
+#minijeux .info-jeu {
+    font-family: initial;
+    font-size: 3vw;
+}
+#minijeux img {
+    max-height: 15vh;
+    max-width: 40vh;
+}
+/* CONTACT */
+#contact img {
+    max-height: 15vh;
+    max-width: 40vh;
+}
+#contact .cadre {
+    width: 85vw;
+    height: 55vh;
+    font-family: initial;
+    font-size: 5vw;
+    font-size: calc(min(5vw,5vh));
+
+    flex-direction: column;
+    padding: 2vh;
+}
 /* FOND D'ECRANS */
-.ecran{
+.ecran {
     background-color: black;
-    background-size: auto 100%;
     background-position-x: center;
+    background-size: auto 100%;
+}
+.ecran.jeux {
     background-repeat: no-repeat;
 }
 .ecran.taphe {
