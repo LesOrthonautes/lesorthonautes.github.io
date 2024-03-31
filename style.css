@@ -1,10 +1,10 @@
 /* COMMUN */
-body{
+body {
     margin: 0;
     height: 100%; 
     overflow-y: hidden;
 }
-.cadre{
+.cadre {
     font-family: 'Menu';
     border-image: url("");
     border-image: url('img/cadre.png') round;
@@ -15,7 +15,7 @@ body{
     font-size: calc(min(5.5vw,3.5vh));
     text-align: center;
 }
-.back{
+.back {
     color: white;
     background-color: rgb(101, 91, 166);
     border-radius: 50%;
@@ -25,14 +25,14 @@ body{
     font-size: 5vh;
     transition: transform 0.4s;
 }
-.cadre, .back{
+.cadre, .back {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     user-select: none;
 }
-.back:hover{
+.back:hover {
     transform: scale(1.1);
     font-size: 4vh;
     animation: none;
@@ -76,7 +76,7 @@ body{
     to { transform: scale(1, 1); }
 }
 
-.secoue:hover{
+.secoue:hover {
     animation: survol 0.25s;
 }
 @keyframes secoue {
@@ -87,7 +87,7 @@ body{
     to { transform: rotate(0deg); }
 }
 
-.zoom{
+.zoom {
     animation: zoom 0.5s;
 }
 @keyframes zoom {
@@ -95,7 +95,7 @@ body{
     to { transform: scale(10); opacity: 50%;}
 }
 
-.entree{
+.entree {
     animation: entree 1s ease-out;
 }
 @keyframes entree {
@@ -193,7 +193,7 @@ body{
     height: 5vh;
     width: 60vw;
 }
-#boutons-chrono{
+#boutons-chrono {
     font-family: 'Menu';
     font-size: 3.3vw;
     display: flex;
@@ -227,6 +227,7 @@ body{
 }
 #lien-video {
     width: 60vw;
+    height: 20vh;
     background-color: black;
     justify-content: space-evenly;
     align-items: center;
@@ -309,10 +310,12 @@ body{
 }
 .ecran.train {
     background-image: url("img/fond_train.jpg");
+    background-repeat: no-repeat;
 }
 .ecran.lile {
     background-image: url("img/fond_lile.jpg");
 }
 .ecran.homophones {
     background-image: url("img/fond_homophones.jpg");
+    background-repeat: no-repeat;
 }

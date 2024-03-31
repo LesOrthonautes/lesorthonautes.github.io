@@ -44,7 +44,7 @@
             </div>
             <div class="cadre chrono apparition">
                 <div id="temps-chrono" >00:00</div>
-                <input id="limite-chrono" type="range" min="5" max="30" value="12" onchange="changeChrono()">
+                <input id="limite-chrono" type="range" min="5" max="30" value="12" oninput="changeChrono()">
                 <div class="conseil">Conseil: de 10 à 15s.<br>Le temps comprend la lecture de la phrase</div>                
                 <div id="boutons-chrono">
                     <div id="start-chrono" onclick="startChrono()">Demarrer</div>
@@ -118,10 +118,8 @@
                 écrire le son [E]. Une video, des 
                 synthèses et des tests pour évaluer ton 
                 degré de compréhension.
-                <div class="bas-tableau">
-                    <div class="gobutton" onclick="go('ext-apprentissage')">C'est parti !</div>
-                    <img id="tuteur" src="img/suivi.png">    
-                </div>
+                <div class="gobutton" onclick="go('ext-apprentissage')">C'est parti !</div>
+                <img id="tuteur" src="img/suivi.png">    
             </div>
             <div class="back" onclick="go('taphe')">↩</div>
         </nav>
