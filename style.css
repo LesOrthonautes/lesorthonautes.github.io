@@ -5,7 +5,7 @@ body{
     overflow-y: hidden;
 }
 .cadre{
-    font-family: 'Merc';
+    font-family: 'Menu';
     border-image: url("");
     border-image: url('img/cadre.png') round;
     border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
@@ -48,13 +48,19 @@ body{
 /*polices*/
 @font-face {
     font-family: 'Digital';
-    src: url('../font/SFDigital.ttf');
+    src: url('../font/Digital.ttf');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Merc';
-    src: url('../font/merc.otf');
+    font-family: 'Menu';
+    src: url('../font/Menu.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tableau';
+    src: url('../font/Tableau.ttf');
     font-weight: 400;
     font-style: normal;
 }
@@ -188,7 +194,7 @@ body{
     width: 60vw;
 }
 #boutons-chrono{
-    font-family: 'Merc';
+    font-family: 'Menu';
     font-size: 3.3vw;
     display: flex;
     flex-direction: row;
@@ -262,6 +268,30 @@ body{
 
     flex-direction: column;
     padding: 2vh;
+}
+/* PARCOURS D'APPRENTISSAGE */
+#apprentissage .tableau {
+    border-image: url("img/tableau.png") 32/16px;
+    width: 70vw;
+    height: 50vh;
+    font-family: 'Tableau';
+    font-size: calc(min(4vh,8vw));
+    color: whitesmoke;
+    background: black;
+    padding: 1em;
+    position: relative;
+}
+#apprentissage #tuteur {
+    position: absolute;
+    bottom: calc(15px - min(35vh,35vw) * 0.23);
+    height: calc(min(35vh,35vw));
+    right: 1vw;
+}
+#apprentissage .gobutton {
+    position: absolute;
+    bottom: 6vh;
+    background-color: purple;
+    border: 3px white outset;
 }
 /* FOND D'ECRANS */
 .ecran {
