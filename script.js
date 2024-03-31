@@ -6,11 +6,15 @@ onload = () => {
 /* Gestion de la navigation */
 onpopstate = (event) => {
     let [ecran, section] = event.state;
-    go(ecran, section)
+    directGo(ecran, section)
 }
 
 let currentSection;
-function go(ecran,section) {
+function go(ecran,section){
+    directGo(ecran, section);
+    history.pushState([ecran, currentSection], "");
+}
+function directGo(ecran,section) {
     if (section) currentSection = section; 
     
     for (divEcran of document.querySelectorAll(".ecran")) {
@@ -22,7 +26,6 @@ function go(ecran,section) {
             divEcran.style.display = "none";
         }
     }
-    history.pushState([ecran, currentSection], "")
 }
 let liensMiniJeux = [
     "https://wordwall.net/fr/resource/31172804/tap-h%c3%a9-1",
