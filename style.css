@@ -246,7 +246,7 @@ body{
 }
 #minijeux img {
     max-height: 15vh;
-    max-width: 40vh;
+    max-width: calc(min(92%,40vh));
 }
 /* CONTACT */
 #contact img {
