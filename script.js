@@ -1,3 +1,66 @@
+let specific = {
+    minijeux: {
+        taphe: {
+            ".cadre:nth-child(1)": (e) => e.onclick = () => minijeu(31172804),
+            ".cadre:nth-child(2)": (e) => e.onclick = () => minijeu(65660529),
+            ".cadre:nth-child(3)": (e) => e.onclick = () => minijeu(65660297),
+            ".cadre:nth-child(4)": (e) => e.onclick = () => minijeu(65660878),
+            ".cadre:nth-child(5)": (e) => e.onclick = () => minijeu(65661228),
+            ".cadre:nth-child(6)": (e) => e.onclick = () => minijeu(65661625)
+        },
+        train: {
+            ".cadre:nth-child(1)": (e) => e.onclick = () => minijeu(70820359),
+            ".cadre:nth-child(2)": (e) => e.onclick = () => minijeu(70850388),
+            ".cadre:nth-child(3)": (e) => e.onclick = () => minijeu(70824597),
+            ".cadre:nth-child(4)": (e) => e.onclick = () => minijeu(70829773),
+            ".cadre:nth-child(5)": (e) => e.onclick = () => minijeu(70848282),
+            ".cadre:nth-child(6)": (e) => e.onclick = () => minijeu(70851745)
+        },
+        homophones: {
+            ".cadre:nth-child(1)": (e) => e.onclick = () => minijeu(70818255),
+            ".cadre:nth-child(2)": (e) => e.onclick = () => minijeu(70813082),
+            ".cadre:nth-child(3)": (e) => e.onclick = () => minijeu(65660297),
+            ".cadre:nth-child(4)": (e) => e.onclick = () => minijeu(70819725),
+            ".cadre:nth-child(5)": (e) => e.onclick = () => minijeu(70809586),
+            ".cadre:nth-child(6)": (e) => e.onclick = () => minijeu(70818835)
+        }
+    },
+    apprentissage: {
+        taphe: {
+            ".tableau": (e) => e.childNodes[0].textContent = "Parcours numérique progressif pour savoir comment écrire le son [E] . Une vidéo, des synthèses et des tests pour évaluer ton degré de compréhension.",
+            ".gobutton": (e) => e.onclick = () => {location = "https://www.quiziniere.com/diffusions/ZXMBMP"}
+        },
+        train: {
+            ".tableau": (e) => e.childNodes[0].textContent = "Parcours numérique pour ne plus confondre les principaux homophones de la langue française. Quelques vidéo, des synthèses et des tests pour évaluer ton degré de compréhension.",
+            ".gobutton": (e) => e.onclick = () => {location = "https://www.quiziniere.com/diffusions/ZXMBMP"}
+        },
+        homophones: {
+            ".tableau": (e) => e.childNodes[0].textContent = "Parcours numérique pour ne plus confondre les principaux homophones de la langue française. Quelques vidéo, des synthèses et des tests pour évaluer ton degré de compréhension.",
+            ".gobutton": (e) => e.onclick = () => {location = "https://www.quiziniere.com/diffusions/LKQZY5"}
+        }
+    },
+    assistant: {
+        taphe: {
+            "#lien-video": (e) => {
+                e.style.backgroundImage = "url('img/video_taphe.jpg')";
+                e.onclick = () => {location = "https://www.youtube.com/watch?v=YMn7befgqus"};
+            }
+        },
+        train: {
+            "#lien-video": (e) => {
+                e.style.backgroundImage = "url('img/video_train.jpg')";
+                e.onclick = () => {location = "https://www.youtube.com/watch?v=kYJuZbdi3fA"};
+            }
+        },
+        homophones: {
+            "#lien-video": (e) => {
+                e.style.backgroundImage = "url('img/video_homophones.jpg')";
+                e.onclick = () => {location = "https://www.youtube.com/watch?v=Sx5CCLVKYx8"};
+            }
+        }
+    }
+};
+
 onload = () => {
     if (isOnMobile()) document.getElementById("lien_pc").style.visibility="visible";
     go("jeux","jeux");
@@ -27,20 +90,20 @@ function directGo(ecran,section) {
             divEcran.style.display = "none";
         }
     }
+
+    if (!specific[ecran] || !specific[ecran][section]) return;
+    for (query in specific[ecran][section]) {
+        let action = specific[ecran][section][query];
+        for (item of document.getElementById(ecran).querySelectorAll(query)){
+            action(item);
+        }
+    }
 }
-let liensMiniJeux = [
-    "https://wordwall.net/fr/resource/31172804/tap-h%c3%a9-1",
-    "https://wordwall.net/fr/resource/65660529/tape-h%c3%a9-3",
-    "https://wordwall.net/fr/resource/65660297/tap%c3%a9-h%c3%a9-2",
-    "https://wordwall.net/fr/resource/65660878/tape-h%c3%a9-4",
-    "https://wordwall.net/fr/resource/65661228/tap-h%c3%a9-5",
-    "https://wordwall.net/fr/resource/65661625"
-]
-function minijeu(i){
-    location = liensMiniJeux[i-1];
+function minijeu(id){
+    location = "https://wordwall.net/fr/resource/"+id;
 }
 
-/* Gestion du Chonomètre */
+/* Gestion du chrono */
 let bip = new Audio("media/bip.mp3");
 let valeurChono = 12;
 let timer;

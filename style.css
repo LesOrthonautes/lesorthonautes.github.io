@@ -3,6 +3,7 @@ body {
     margin: 0;
     height: 100%; 
     overflow-y: hidden;
+    user-select: unset;
 }
 .cadre {
     font-family: 'Menu';
@@ -228,11 +229,14 @@ body {
 #lien-video {
     width: 60vw;
     height: 20vh;
-    background-color: black;
+    background-color: inherit;
     justify-content: space-evenly;
     align-items: center;
     display: flex;
     cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #lien-video img {
     height: 70%;
@@ -243,7 +247,7 @@ body {
     flex-wrap: wrap;
 }
 #minijeux .cadre {
-    width: 45vw;
+    width: 48vw;
     height: 25vh;
     flex-direction: column;
 }
@@ -266,7 +270,6 @@ body {
     font-family: initial;
     font-size: 5vw;
     font-size: calc(min(5vw,5vh));
-
     flex-direction: column;
     padding: 2vh;
 }
@@ -293,6 +296,11 @@ body {
     bottom: 6vh;
     background-color: purple;
     border: 3px white outset;
+    cursor: pointer;
+}
+/* RESUME */
+#resume img {
+    width: 90vw;
 }
 /* FOND D'ECRANS */
 .ecran {

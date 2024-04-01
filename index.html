@@ -38,7 +38,7 @@
         </nav> 
        
         <!-- General : chronomètre -->
-        <nav class="ecran" id="chrono">
+        <nav class="ecran" id="assistant">
             <div class="cadre apparition">
                 Assistant de jeu
             </div>
@@ -62,32 +62,32 @@
 
         <!-- General : mini-jeux -->
         <nav class="ecran" id="minijeux">
-            <div class="cadre apparition" onclick="minijeu(1)">
+            <div class="cadre apparition">
                 <span class="titre-jeu">Quizz Show</span>
                 <img src="img/jeu1.png">
                 <span class="info-jeu">Mode jeu télé</span>
             </div>
             <div class="cadre apparition">
-                <span class="titre-jeu" onclick="minijeu(2)">Aviateur</span>
+                <span class="titre-jeu">Aviateur</span>
                 <img src="img/jeu2.png">
                 <span class="info-jeu">Dans les nuages...</span>
             </div>
-            <div class="cadre apparition" onclick="minijeu(3)">
+            <div class="cadre apparition">
                 <span class="titre-jeu">Labyrinthe</span>
                 <img src="img/jeu3.png">
                 <span class="info-jeu">Mode Pacman</span>
             </div>
-            <div class="cadre apparition" onclick="minijeu(4)">
+            <div class="cadre apparition">
                 <span class="titre-jeu">Le parieur</span>
                 <img src="img/jeu4.png">
                 <span class="info-jeu">Attention a ne pas tout perdre</span>
             </div>
-            <div class="cadre apparition"  onclick="minijeu(5)">
+            <div class="cadre apparition">
                 <span class="titre-jeu">Tap'Taupes</span>
                 <img src="img/jeu5.png">
                 <span class="info-jeu">Un jeu de rapidité</span>
             </div>
-            <div class="cadre apparition" onclick="minijeu(6)">
+            <div class="cadre apparition">
                 <span class="titre-jeu">Mot manquant</span>
                 <img src="img/jeu6.png">
                 <span class="info-jeu">Calme et complexité</span>
@@ -126,7 +126,7 @@
 
         <!-- TAP-HE : écran principal -->
         <nav class="ecran" id="taphe">
-            <div class="cadre apparition" onclick="go('chrono','taphe')">
+            <div class="cadre apparition" onclick="go('assistant','taphe')">
                 Assistant de jeu
             </div>
             <div class="cadre apparition" onclick="go('apprentissage','taphe')">
@@ -135,7 +135,7 @@
             <div class="cadre apparition" onclick="go('resume','taphe')">
                 La leçon en résumé
             </div>
-            <div class="cadre apparition" onclick="go('video','taphe')">
+            <div class="cadre apparition" onclick="location='https://www.youtube.com/watch?v=2wQsC84QXFA'">
                 La leçon en video
             </div>
             <div class="cadre apparition" onclick="go('minijeux','taphe')">
@@ -147,9 +147,17 @@
             <div class="back" onclick="go('jeux','jeux')">↩</div>
         </nav>
 
+        <!-- TAP-HE : résumé -->
+        <nav class="ecran" id="resume">
+            <img src="img/taphe-resume1.png">
+            <img src="img/taphe-resume2.png">
+            <img src="img/taphe-resume3.png">
+            <div class="back" onclick="go('taphe')">↩</div>
+        </nav>
+
         <!-- TRAIN : écran principal -->
         <nav class="ecran" id="train">
-            <div class="cadre apparition" onclick="go('chrono','train')">
+            <div class="cadre apparition" onclick="go('assistant','train')">
                 Assistant de jeu
             </div>
             <div class="cadre apparition" onclick="go('apprentissage','train')">
@@ -166,7 +174,7 @@
 
         <!-- HOMOPHONES : écran principal -->
         <nav class="ecran" id="homophones">
-            <div class="cadre apparition" onclick="go('chrono','homophones')">
+            <div class="cadre apparition" onclick="go('assistant','homophones')">
                 Assistant de jeu
             </div>
             <div class="cadre apparition" onclick="go('apprentissage','homophones')">
