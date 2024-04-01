@@ -47,12 +47,18 @@ let specific = {
             }
         },
         train: {
+            "#limite-chrono": (e) => {
+                e.min=5*60; e.max=12*60; e.value=8*60; e.step=30;
+                resetChrono();
+            },
+            ".conseil": (e) => e.textContent = "Conseil : parties de 8 minutes.",
             "#lien-video": (e) => {
                 e.style.backgroundImage = "url('img/video_train.jpg')";
                 e.onclick = () => {location = "https://www.youtube.com/watch?v=kYJuZbdi3fA"};
             }
         },
         homophones: {
+            ".chrono": (e) => e.style.display="none",
             "#lien-video": (e) => {
                 e.style.backgroundImage = "url('img/video_homophones.jpg')";
                 e.onclick = () => {location = "https://www.youtube.com/watch?v=Sx5CCLVKYx8"};
@@ -75,6 +81,7 @@ onpopstate = (event) => {
 
 let currentSection;
 function go(ecran,section){
+    if (ecran=="back") ecran = currentSection;
     directGo(ecran, section);
     history.pushState([ecran, currentSection], "");
 }
