@@ -1,3 +1,5 @@
+var noSleep = new NoSleep();
+
 let specific = {
     minijeux: {
         taphe: {
@@ -86,6 +88,14 @@ function go(ecran,section){
     history.pushState([ecran, currentSection], "");
 }
 function directGo(ecran,section) {
+    if (ecran=="assistant"){
+        console.log("enable noSleep")
+        noSleep.enable();
+    } else {
+        console.log("disable noSleep")
+        noSleep.disable();
+    }
+    
     if (section) currentSection = section; 
     
     for (divEcran of document.querySelectorAll(".ecran")) {
@@ -105,6 +115,7 @@ function directGo(ecran,section) {
             action(item);
         }
     }
+    
 }
 function minijeu(id){
     location = "https://wordwall.net/fr/resource/"+id;
